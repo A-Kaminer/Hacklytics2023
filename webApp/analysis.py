@@ -13,13 +13,9 @@ class Analysis:
         sp500['SP500'] = pd.to_numeric(sp500['SP500'], errors='coerce')
         sp500['SP500'] = sp500['SP500'].dropna()
 
-        return Analysis.linear_plot(sp500['DATE'], sp500['SP500'])
-
-
-    def linear_plot(x,y):
         plt.clf()
-        plt.plot(x,y)
-       
+        plt.plot(sp500['DATE'], sp500['SP500'])
+
         filename = './static/plot.png'
         plt.savefig(filename)
 
