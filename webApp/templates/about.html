@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>About</title>
+{% endblock %}
+
+{% block body %}
+
+<h1>About the creators</h1>
+
+<div id="andrew">
+    <h3>Andrew Kaminer</h3>
+    <p>{{about_andrew}}</p>
+
+    <a href={{andrew_github}}><img src={{url_for('static', filename='GitHub-Mark.png')}} width="30px"></a>
+</div>
+
+<div id="eddie">
+    <h3>Edward Chong</h3>
+    <p>{{about_eddie}}</p>
+</div>
+
+<div id="daniel">
+    <h3>Daniel Park</h3>
+    <p>{{about_daniel}}</p>
+</div>
+
+<div id="rohan">
+    <h3>Rohan Bhagat</h3>
+    <p>{{about_rohan}}</p>
+</div>
+
+
+{% endblock %} 
