@@ -6,17 +6,21 @@ import string
 
 
 class Analysis:
-    def make_random_plot():
-        a = np.random.randint(5, size=1)[0]
-        b = np.random.randint(5, size=1)[0]
-        c = np.random.randint(5, size=1)[0]
+    def sample_plot():
+        sp500 = pd.read_csv('./data/SP500.csv')
 
-        x = np.arange(-5,5,.5)
-        y = x**a + x**b + c
+        sp500['DATE'] = pd.to_datetime(sp500['DATE'], format='%Y-%m-%d')
+        sp500['SP500'] = pd.to_numeric(sp500['SP500'], errors='coerce')
+        sp500['SP500'] = sp500['SP500'].dropna()
 
+        return Analysis.linear_plot(sp500['DATE'], sp500['SP500'])
+
+
+    def linear_plot(x,y):
         plt.clf()
         plt.plot(x,y)
        
-        filename = f'./static/plot.png'
+        filename = './static/plot.png'
         plt.savefig(filename)
+
         return filename

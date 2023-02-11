@@ -9,7 +9,7 @@ def index():
 
 @app.route('/plot')
 def plot():
-    filename = Analysis.make_random_plot()
+    filename = Analysis.sample_plot()
     resp = Response(render_template('plot.html', img_name=filename))
     resp.headers['Cache-Control'] = 'no-cache'
     return resp
