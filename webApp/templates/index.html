@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<title>Plot</title>
 {% endblock %}
 
 {% block body %}
-<a href="./plot">Click here to see plot</a>
 
-{% endblock %}
+<img src="{{url_for('plot_png', is_null=True)}}" align="middle"/>
+
+{% endblock %} 
