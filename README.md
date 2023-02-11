@@ -10,3 +10,4 @@
 6. To start the flask server, run app.py using python in the command line.
 7. To access in the browser, type "localhost:5000" into the browser.
 8. You should be ready to mess with the website.
+9. Finally, unzip the csv files to let everything work.
